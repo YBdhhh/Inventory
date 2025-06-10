@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -9,6 +9,7 @@ public class UIMainMenu : MonoBehaviour
     [SerializeField] private TextMeshProUGUI characterID;
     [SerializeField] private TextMeshProUGUI description;
     [SerializeField] private TextMeshProUGUI gold;
+    [SerializeField] private TextMeshProUGUI level;
 
     [SerializeField] private Image expBar;
     [SerializeField] private TextMeshProUGUI expText;
@@ -26,15 +27,13 @@ public class UIMainMenu : MonoBehaviour
     {
         statButton.onClick.AddListener(OpenStatus);
         invenButton.onClick.AddListener(OpenInventory);
-        characterID.text = GameManager.instance.character.CharaterID;
-        description.text = GameManager.instance.character.Description;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateUI();
-        
+        SetCharacter(GameManager.instance.player);
     }
 
     public void OpenStatus()
@@ -54,9 +53,14 @@ public class UIMainMenu : MonoBehaviour
         status.SetActive(false);
     }
 
-    public void UpdateUI()
+
+    public void SetCharacter(Character character)
     {
-        expBar.fillAmount = GameManager.instance.character.GetPercent();
-        expText.text = ($"{GameManager.instance.character.CurrentExp} / {GameManager.instance.character.MaxExp}");
+        characterID.text = character.CharacterID;
+        description.text = character.Description;
+        level.text = character.Level.ToString();
+        gold.text = character.Gold.ToString();
+        expBar.fillAmount = character.GetPercent();
+        expText.text = ($"{character.CurrentExp} / {character.MaxExp}");
     }
 }

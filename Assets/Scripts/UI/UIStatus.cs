@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -21,8 +21,8 @@ public class UIStatus : MonoBehaviour
     }
     void Start()
     {
-        backButton.onClick.AddListener(UIManager.Instance.UIMainMenu.OpenMainMenu);
-        OpenStat();
+        //backButton.onClick.AddListener(UIManager.Instance.UIMainMenu.OpenMainMenu);
+        SetStat(GameManager.instance.player);
     }
 
     // Update is called once per frame
@@ -31,7 +31,7 @@ public class UIStatus : MonoBehaviour
         
     }
 
-    void OpenStat()
+    public void SetStat(Character character)
     {
         atk.text = character.Atk.ToString();
         def.text = character.Def.ToString();

@@ -2875,7 +2875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ce069faa50b28488f7b0718fa5cae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 0}
+  player: {fileID: 1199299512}
 --- !u!4 &497285279
 Transform:
   m_ObjectHideFlags: 0
@@ -6396,7 +6396,6 @@ MonoBehaviour:
   gold: 2000
   currentExp: 0
   maxExp: 10
-  exp: {fileID: 0}
   level: 1
   atk: 35
   def: 40
@@ -7454,11 +7453,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2fad91501401e44ba349a252de755fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterID: {fileID: 0}
-  description: {fileID: 0}
-  gold: {fileID: 0}
-  expBar: {fileID: 0}
-  expText: {fileID: 0}
+  characterID: {fileID: 1987304997}
+  description: {fileID: 759357428}
+  gold: {fileID: 2074886285}
+  level: {fileID: 1652501511}
+  expBar: {fileID: 434856422}
+  expText: {fileID: 888371915}
   buttons: {fileID: 1128688385}
   statButton: {fileID: 1793496425}
   invenButton: {fileID: 668981536}

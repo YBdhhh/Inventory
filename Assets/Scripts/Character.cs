@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -6,29 +6,29 @@ using UnityEngine.UI;
 
 public class Character : MonoBehaviour
 {
+    [Header("Main")]
     [SerializeField] private string characterID;
-    public string CharaterID {  get; private set; }
+    public string CharacterID {  get; private set; }
     [SerializeField] private string description;
     public string Description { get; private set; }
-    [SerializeField] private int gold = 2000;
+    [SerializeField] private int gold;
     public int Gold { get; private set; }
-    [SerializeField] private int currentExp = 0;
+    [SerializeField] private int currentExp;
     public int CurrentExp { get; private set; }
-    [SerializeField] private int maxExp = 10;
+    [SerializeField] private int maxExp;
     public int MaxExp { get; private set; }
 
-    [SerializeField] private GameObject exp;
-
-    [SerializeField] private int level = 1;
+    [SerializeField] private int level;
     public int Level { get; private set; }
-    
-    [SerializeField] public int atk = 35;
+
+    [Header("status")]
+    [SerializeField] public int atk;
     public int Atk {  get; set; }
-    [SerializeField] private int def = 40;
+    [SerializeField] private int def;
     public int Def { get; private set; }
-    [SerializeField] private int maxHp = 100;
+    [SerializeField] private int maxHp;
     public int MaxHp { get; private set; }
-    [SerializeField] private int critical = 25;
+    [SerializeField] private int critical;
     public int Critical { get; private set; }
 
 
@@ -47,5 +47,19 @@ public class Character : MonoBehaviour
     public float GetPercent()
     {
         return (float)currentExp / maxExp;
+    }
+
+    public Character(string characterID,  string description, int gold,int currentExp, int maxExp, int level,  int atk, int def,int maxHp, int critical)
+    {
+        this.CharacterID = characterID;
+        this.Description = description;
+        this.Gold = gold;
+        this.CurrentExp = currentExp;
+        this.MaxExp = maxExp;
+        this.Level = level;
+        this.Atk = atk;
+        this.Def = def;
+        this.MaxHp = maxHp;
+        this.Critical = critical;
     }
 }

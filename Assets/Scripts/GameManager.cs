@@ -1,3 +1,4 @@
+﻿using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Timeline.Actions;
@@ -7,18 +8,18 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public GameObject player { get; private set; }
-    public Character character;
+    public GameObject Player { get; private set; }
+    public Character player;
 
     private void Awake()
     {
         instance = this;
-        character = GetComponent<Character>();
+        SetData();
     }
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -30,7 +31,6 @@ public class GameManager : MonoBehaviour
 
     public void SetData()
     {
-        Character Player = new Character();
-        player = Player.gameObject;
+         player = new Character("SYB", "일어나 핫산 코딩해야지.. 일어나 핫산 코딩해야지.. 일어나 핫산 코딩해야지..", 2000, 0, 10, 1, 35, 40, 100, 25);
     }
 }
